@@ -36,7 +36,7 @@
                         </div>
                         <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4">
-                            <form action="" method="post">
+                            <form action="{{route('store_request')}}" method="post">
                                 @csrf
 
                                 <div class="grid grid-cols-2 gap-4 text-left">
@@ -61,7 +61,7 @@
                                     </div>
 
                                     <div>
-                                        <button type="button" class="btn-primary cursor-pointer">Send Request</button>
+                                        <button type="submit" class="btn-primary cursor-pointer">Send Request</button>
                                     </div>
                                 </div>
                             </form>

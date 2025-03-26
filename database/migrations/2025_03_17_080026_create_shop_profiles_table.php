@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("shop_name");
             $table->string("address");
-            $table->string("photo");
+            $table->string("photo")->nullable();
             $table->foreignId("shop_id")->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
