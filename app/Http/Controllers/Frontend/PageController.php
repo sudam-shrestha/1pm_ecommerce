@@ -32,7 +32,12 @@ class PageController extends Controller
         $profile->address = $request->address;
         $profile->save();
 
-        Mail::to('sudamshrestha2144@gmail.com')->send(new EmailNotification());
+        $data = [
+            "subject" => "New Shop Request",
+            "message" => "aaaaaaaaaaaaaaaaaaaaa",
+        ];
+
+        Mail::to('sudamshrestha2144@gmail.com')->send(new EmailNotification($data));
 
         return redirect()->route('home');
     }

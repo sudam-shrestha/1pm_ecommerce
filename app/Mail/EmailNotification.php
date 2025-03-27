@@ -13,12 +13,13 @@ class EmailNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -27,7 +28,7 @@ class EmailNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Shop Request',
+            subject: $this->data['subject'],
         );
     }
 
